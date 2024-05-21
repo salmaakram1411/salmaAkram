@@ -36,7 +36,8 @@ body{
 }
 
 .header .navbar a:hover {
-    color: rgb(224, 30, 55);
+    color: #e01e37;
+    
     border-bottom: 1rem;
     padding-bottom: .5rem;
 }
@@ -204,7 +205,7 @@ body{
     padding: 0.8rem 1.3rem; 
     font-size: 1.5rem;
     margin-top: 3rem;
-    background-color: rgba(224, 30, 56, 0.737);
+    background-color: #e01e38bc;
     border-radius: 3rem;
     text-decoration: none;
     color: white;

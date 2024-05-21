@@ -52,7 +52,7 @@ section {
 }
 
 .header .icons div:hover {
-  color: rgb(245, 243, 244);
+  color: #f5f3f4;
 }
 
 .header .icons {
@@ -190,7 +190,7 @@ section {
 }
 
 .chefP-text h3 {
-  color: rgb(224, 30, 55);
+  color: #e01e37;
   font-size: 1rem;
   font-weight: 400;
   padding: 10px;
