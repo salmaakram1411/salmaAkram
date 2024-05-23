@@ -1,78 +1,141 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
 
-:root {
-  --main-color: #e01e38bc;
+:root{
+  --font-color:#e01e37;
+  --main-color:#e01e38bc;
+  --main-bg:rgb(248, 249, 250);
+  --sec-bg:rgb(245, 243, 244);
+  --border:.1rem solid rgba(255,255,255,.3);
+  --sec-color:rgb(173, 181, 189) ;
   --text-color: #2f2f2f;
   --bg-color: #fff;
   --big-font: 3.2rem;
   --h2-font: 2rem;
+
+
+}
+*{
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border:none ;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top:9rem;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+  width: .8rem;
+}
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+  background: var(--sec-color);
+  border-radius: 5rem;
+}
+body{
+  background: var(--main-bg);
+}
+
+.btn{
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .9rem 3rem;
+  font-size: 1.7rem;
+  color: white;
+  background: var(--main-color);
+  cursor: pointer;
+}
+.btn:hover{
+  letter-spacing: .1rem;
 }
 section {
   padding: 50px 10%;
 }
 
-.logo img {
+/*.logo img {
   width: 230px;
   margin-bottom: 0;
   margin-left: -50px;
   height: 3cm;
-}
+}*/
 /**********************************************************************Header******************************************************************/
 .header {
-  background: white;
-  display: flex;
+  background: var(--main-bg);
+  display:  flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 7%;
+  border-bottom: var(--border);
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 1000;
-  height: 1.3cm;
+  height: 2.2cm;
+  padding: 4rem 8rem;
+  
+}
+.header .logo img {
+  /*width: 230px;
+  margin-bottom: 1px;
+  margin-left: -50px; */
+  height: 9em;
+  width: 18rem;
 }
 
-.header .navbar {
-  margin-left: -100px;
-}
+/*.header .navbar {
+  margin-left: -100px; /* Adjusted margin-left to align navbar with the logo */
+/*}**/
 
 .header .navbar a {
   margin: 0 1rem;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   color: black;
-  text-decoration: none;
 }
 
 .header .navbar a:hover {
-  color: rgb(224, 30, 55);
-  border-bottom: 1rem;
+  color: var(--font-color);
+  border-bottom: .1rem solid var(--font-color) ;
   padding-bottom: .5rem;
+}
+.header .icons div{
+  color: black;
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 2rem;
+  
 }
 
 .header .icons div:hover {
-  color: #f5f3f4;
+  color: var(--font-color);
 }
 
-.header .icons {
+/*.header .icons {
   display: inline-block;
   align-items: center;
-  background-color: rgba(224, 30, 56, 0.656);
+  background-color:  rgba(224, 30, 56, 0.656);
   border-radius: 3rem;
-  box-shadow: rgb(245, 243, 244) 0px 1px 10px;
+  box-shadow:  rgb(245, 243, 244) 0px 1px 10px;
   padding: 5px;
-}
+  
+}*/
 
 #menu-btn {
   display: none;
 }
 
-.search-form {
+.header .search-form {
   position: absolute;
   top: 115%;
   right: 7%;
-  background: white;
+  background: var(--main-bg);
   width: 50rem;
   height: 5rem;
   display: flex;
@@ -102,12 +165,12 @@ section {
 }
 
 .search-form label:hover {
-  color: antiquewhite;
+  color: var(--font-color);
 }
 
-.search-form .fas.fa-search {
+/*.search-form .fas.fa-search {
   padding-left: 8px;
-}
+}*/
 
 .cart-items-container {
   position: absolute;
@@ -115,61 +178,65 @@ section {
   right: -100%;
   height: calc(110vh - 9.5rem);
   width: 35rem;
-  background: aqua;
+  background: var(--sec-bg);
   padding: 0 1.5rem;
 }
 
-
+.cart-items-container.active {
+  right: 0;
+}
 
 .cart-items-container .cart-item {
   position: relative;
-  margin: 1rem 0;
-  padding: 1rem;
+  margin: 2rem 0;
+  /*padding: 1rem;*/
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-.cart-items-container .cart-item .fas.fa-times {
+.cart-items-container .cart-item .fa-times {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 1rem;
+  font-size: 2rem;
   cursor: pointer;
-  color: var(--black);
-  margin-right: 1rem;
+  color: black;
+ /* margin-right: 1rem;*/
 }
 
-.cart-items-container .cart-item .fas.fa-times:hover {
-  color: antiquewhite;
+.cart-items-container .cart-item .fa-times:hover {
+  color: var(--font-color);
 }
 
 .cart-items-container .cart-item img {
-  height: 6rem;
+  height: 7rem;
+  width: 9rem;
 }
 
-.cart-items-container .cart-item .content h2 {
-  font-size: 1.3rem;
+.cart-items-container .cart-item .content h3 {
+  font-size: 2rem;
   color: black;
   padding-bottom: .5rem;
-  margin: 0;
 }
 
 .cart-items-container .cart-item .content .price {
-  font-size: 0.9rem;
-  color: black;
+  font-size: 1.5rem;
+  color: var(--font-color);
 }
 
 .cart-items-container .btn {
-  width: 92%;
+  width: 100%;
+  text-align: center;
+ /* width: 92%;
   height: 2%;
   text-align: center;
   padding: 1rem;
   line-height: 0.6rem;
-  font-size: 1.3rem;
-  color: black;
+  font-size: 1.3rem;*/
+  
 }
-
+/*header*/
 
 
 /******************************************************************chef profile******************************************************************/
@@ -189,18 +256,18 @@ section {
   width: 90%;
 }
 
-.chefP-text h3 {
+/*.chefP-text h3 {
   color: #e01e37;
-  font-size: 1rem;
+  font-size: 3rem;
   font-weight: 400;
   padding: 10px;
   width: 160px;
   border-radius: 2rem;
   background: #feeceb;
-}
+}*/
 
 .chefP-text h1 {
-  font-size: 6rem;
+  font-size: 9rem;
   font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
   font-style: normal;
@@ -213,8 +280,8 @@ section {
 }
 
 .chefP-text p {
-  max-width: 80%;
-  font-size: 1rem;
+  max-width: 70%;
+  font-size: 1.3rem;
   margin: 1rem 0 1.1rem;
   padding-bottom: 1rem;
 }
@@ -261,35 +328,55 @@ section {
 
 .menu .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
 
 .menu .box-container .box {
-  padding: 2rem;
+  padding: 1rem;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  border: var(--border);
+  background: #fff;
   text-align: center;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
 }
 
 .menu .box-container .box img {
-  height: 15rem;
-  width:20rem ;
-  max-width: 100%;
+  height: 25rem;
+  border-radius: .5rem;
+  width: 100%;
+  object-fit: cover;
 }
 
 .menu .box-container .box h3 {
-  color: #000;
-  font-size: 1.8rem;
-  
+  font-size: 2.2rem;
+  color: var(--text-color);
+  padding-top: 1rem;
+}
+
+.menu .box-container .box p {
+  font-size: 1.4rem;
+  color: var(--sec-color);
+  padding: .5rem 0;
 }
 
 .menu .box-container .box .price {
-  color: #000;
-  font-size: 1.6rem;
-  padding: 1rem 0;
+  font-size: 2.2rem;
+  color: var(--font-color);
 }
 
+.menu .box-container .box .btn {
+  display: inline-block;
+  padding: .9rem 3rem;
+  font-size: 1.7rem;
+  color: white;
+  background: var(--main-color);
+  cursor: pointer;
+}
+
+.menu .box-container .box .btn:hover {
+  letter-spacing: .1rem;
+}
 /********************************************************************** Media Queries*********************************************************** */
 
 /* For screens up to 1024px wide */
@@ -301,10 +388,14 @@ section {
 
 /* For screens up to 991px wide */
 @media (max-width: 991px) {
-  header {
-    padding: 10px 4%;
-  }
+  html{
+    font-size:55% ;
 
+}
+.header{
+    padding: 1.5rem 2rem;
+}
+  
   section {
     padding: 50px 4%;
   }
@@ -314,18 +405,6 @@ section {
     --h2-font: 1.7rem;
   }
 
-  .header .navbar a {
-    margin: 0 0.7rem;
-    font-size: 1.4rem;
-    color: black;
-    text-decoration: none;
-  }
-
-  .header .navbar {
-   
-   
-    padding-left: 40px;
-  }
   .nav-menu {
     padding: 1.9rem 0.5rem;
   }
